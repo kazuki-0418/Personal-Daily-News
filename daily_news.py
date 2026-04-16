@@ -14,8 +14,8 @@ import yaml
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api.proxies import WebshareProxyConfig
 from anthropic import Anthropic
-
 
 # ============================================================
 # CONFIG
@@ -25,6 +25,8 @@ CLAUDE_MODEL = "claude-sonnet-4-6"
 TRANSCRIPT_CHAR_LIMIT = 15000  # コスト制御
 
 REQUIRED_ENV_VARS = [
+    "WEBSHARE_USERNAME",
+    "WEBSHARE_PASSWORD",
     "YOUTUBE_API_KEY",
     "ANTHROPIC_API_KEY",
     "GMAIL_CLIENT_ID",
@@ -102,7 +104,9 @@ def get_transcript(ytt_api: YouTubeTranscriptApi, video_id: str) -> str | None:
 # ============================================================
 # 3. Claude summarize
 # ============================================================
-def summarize(client: Anthropic, title: str, content: str, is_description: bool = False) -> str:
+def summarize(
+    client: Anthropic, title: str, content: str, is_description: bool = False
+) -> str:
     source_label = "動画説明文" if is_description else "字幕"
     prompt = f"""以下のYouTube動画を日本語で3行に要約してください。
 技術的な要点、実装のヒント、開発者にとっての示唆を優先してください。
@@ -188,7 +192,12 @@ def main():
 
     youtube = build("youtube", "v3", developerKey=os.environ["YOUTUBE_API_KEY"])
     claude = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-    ytt_api = YouTubeTranscriptApi()
+    ytt_api = YouTubeTranscriptApi(
+        proxy_config=WebshareProxyConfig(
+            proxy_username=os.environ["WEBSHARE_USERNAME"],  # WebShare のユーザー名
+            proxy_password=os.environ["WEBSHARE_PASSWORD"],  # WebShare のパスワード
+        )
+    )
 
     sections = []
     for channel_name, channel_id in channels:
@@ -209,7 +218,9 @@ def main():
                 print(f"    → no transcript or description, skipping")
                 continue
 
-            summary = summarize(claude, v["title"], content, is_description=is_description)
+            summary = summarize(
+                claude, v["title"], content, is_description=is_description
+            )
             processed.append(
                 {
                     "title": v["title"],
