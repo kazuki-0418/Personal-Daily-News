@@ -1,12 +1,203 @@
 channels:
-  - name: Theo - t3.gg
-    channel_id: UCbRP3c757lWg9M-U7TyEkXA
+  - name: NetworkChuck
+    channel_id: UC9x0AN7BWHp02kErXq1xEGA
     enabled: true
+    category: tech
+    language: en
+    subscribers: 3800000
+    recent_activity: 4
+    why: IT infrastructure, cloud, and networking basics with high energy.
+    url: https://www.youtube.com/channel/UC9x0AN7BWHp02kErXq1xEGA
 
-  - name: AI Explained
-    channel_id: UCNJ1Ymd5yFuUPtn21xtRbbw
+  - name: Web Dev Simplified
+    channel_id: UCFbNIlppjAuEX4znoulh0Cw
     enabled: true
+    category: tech
+    language: en
+    subscribers: 1500000
+    recent_activity: 8
+    why: Practical, high-quality web development tutorials.
+    url: https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw
 
-  - name: Fireship
-    channel_id: UCsBjURrPoezykLs9EqgamOA
+  - name: Y Combinator
+    channel_id: UCcefcZRL2oaA_uBNeo5UOWg
     enabled: true
+    category: startup
+    language: en
+    subscribers: 1100000
+    recent_activity: 10
+    why: Best practices, startup advice, and founder interviews from top accelerator.
+    url: https://www.youtube.com/channel/UCcefcZRL2oaA_uBNeo5UOWg
+
+  - name: Slidebean
+    channel_id: UC4Gj4h4-h-O21062KxNfU1Q
+    enabled: true
+    category: startup
+    language: en
+    subscribers: 450000
+    recent_activity: 3
+    why: Startup pitch decks, business models, and fundraising strategies.
+    url: https://www.youtube.com/channel/UC4Gj4h4-h-O21062KxNfU1Q
+
+  - name: Jack Herrington
+    channel_id: UC6vRUjYqDjcUsMhN7EziTrg
+    enabled: true
+    category: dev-for-startup
+    language: en
+    subscribers: 150000
+    recent_activity: 4
+    why: Modern frontend architectures and scalable stacks suitable for startups.
+    url: https://www.youtube.com/channel/UC6vRUjYqDjcUsMhN7EziTrg
+
+  - name: Hussein Nasser
+    channel_id: UC_ML5xP23TOWKUcc-oAE_Eg
+    enabled: true
+    category: dev-for-startup
+    language: en
+    subscribers: 250000
+    recent_activity: 6
+    why: Deep dives into backend engineering and database performance.
+    url: https://www.youtube.com/channel/UC_ML5xP23TOWKUcc-oAE_Eg
+
+  - name: Ahrefs
+    channel_id: UCWquN4S-ZpQMEGqJSA_TkiA
+    enabled: true
+    category: marketing
+    language: en
+    subscribers: 430000
+    recent_activity: 4
+    why: Actionable SEO and marketing tutorials for growing traffic.
+    url: https://www.youtube.com/channel/UCWquN4S-ZpQMEGqJSA_TkiA
+
+  - name: Neil Patel
+    channel_id: UCl-ZO84QWJjU4Y1d6O9G3XQ
+    enabled: true
+    category: marketing
+    language: en
+    subscribers: 1200000
+    recent_activity: 12
+    why: High-volume, short marketing tips and digital growth strategies.
+    url: https://www.youtube.com/channel/UCl-ZO84QWJjU4Y1d6O9G3XQ
+
+  - name: Mayuko
+    channel_id: UCmpewK3272hP13Q_TzI-d7A
+    enabled: true
+    category: career
+    language: en
+    subscribers: 580000
+    recent_activity: 2
+    why: Honest perspectives on software engineering careers and tech life.
+    url: https://www.youtube.com/channel/UCmpewK3272hP13Q_TzI-d7A
+
+  # TODO: channel_id 要確認。確認後 enabled: true に切り替え
+  - name: Namanh Kapur
+    channel_id: "要確認"
+    enabled: false
+    category: career
+    language: en
+    subscribers: 180000
+    recent_activity: 3
+    why: Tips for interviewing, landing tech jobs, and productivity.
+    url: https://www.youtube.com/
+
+  - name: Continuous Delivery
+    channel_id: UCCfqyGl3nq_V0bo6VcmP0YQ
+    enabled: true
+    category: senior-engineer
+    language: en
+    subscribers: 220000
+    recent_activity: 4
+    why: Expert-level CI/CD, architecture, and agile software development principles.
+    url: https://www.youtube.com/channel/UCCfqyGl3nq_V0bo6VcmP0YQ
+
+  - name: ArjanCodes
+    channel_id: UCBcGC4wH14o1-u1FjC5K7wQ
+    enabled: true
+    category: senior-engineer
+    language: en
+    subscribers: 360000
+    recent_activity: 4
+    why: High-level code design, refactoring, and software architecture.
+    url: https://www.youtube.com/channel/UCBcGC4wH14o1-u1FjC5K7wQ
+
+  - name: Dave2D
+    channel_id: UCVYamHliCI9rw1tHR1xbkfw
+    enabled: true
+    category: gadget
+    language: en
+    subscribers: 3700000
+    recent_activity: 5
+    why: Clean, straightforward reviews of tech hardware and laptops.
+    url: https://www.youtube.com/channel/UCVYamHliCI9rw1tHR1xbkfw
+
+  - name: ShortCircuit
+    channel_id: UCcJgOennb0EQIAgA2eRUWmw
+    enabled: true
+    category: gadget
+    language: en
+    subscribers: 2200000
+    recent_activity: 15
+    why: Fast-paced unboxings and first impressions of new tech devices.
+    url: https://www.youtube.com/channel/UCcJgOennb0EQIAgA2eRUWmw
+
+  - name: MicroConf
+    channel_id: UCOkRsq2K0rWqRk4hA35OXXA
+    enabled: true
+    category: indie-hacker
+    language: en
+    subscribers: 65000
+    recent_activity: 6
+    why: B2B SaaS strategies for bootstrapped founders.
+    url: https://www.youtube.com/channel/UCOkRsq2K0rWqRk4hA35OXXA
+
+  # TODO: channel_id 要確認。確認後 enabled: true に切り替え
+  - name: Marc Lou
+    channel_id: "要確認"
+    enabled: false
+    category: indie-hacker
+    language: en
+    subscribers: 80000
+    recent_activity: 4
+    why: Transparent building of micro-SaaS products as a solopreneur.
+    url: https://www.youtube.com/
+
+  - name: Ali Abdaal
+    channel_id: UCoOae5nYA7VqaXzerajD0lg
+    enabled: true
+    category: productivity
+    language: en
+    subscribers: 5400000
+    recent_activity: 4
+    why: Frameworks for productivity, learning, and meaningful work.
+    url: https://www.youtube.com/channel/UCoOae5nYA7VqaXzerajD0lg
+
+  - name: Thomas Frank
+    channel_id: UCG-KntY7aVnIGXYEBQvmBAQ
+    enabled: true
+    category: productivity
+    language: en
+    subscribers: 2900000
+    recent_activity: 2
+    why: Advanced Notion tutorials and personal workflow optimization.
+    url: https://www.youtube.com/channel/UCG-KntY7aVnIGXYEBQvmBAQ
+
+  - name: Lex Fridman
+    channel_id: UCSHZKgP0K-N1X_Qv0EwZExQ
+    enabled: true
+    category: podcast
+    language: en
+    subscribers: 3800000
+    recent_activity: 8
+    why: Long-form, deep interviews with top tech and AI leaders.
+    url: https://www.youtube.com/channel/UCSHZKgP0K-N1X_Qv0EwZExQ
+
+  # TODO: channel_id 要確認。確認後 enabled: true に切り替え
+  - name: Lenny's Podcast
+    channel_id: "要確認"
+    enabled: false
+    category: podcast
+    language: en
+    subscribers: 200000
+    recent_activity: 8
+    why: Elite product management, growth, and startup leadership interviews.
+    url: https://www.youtube.com/
