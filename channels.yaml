@@ -141,6 +141,16 @@ channels:
     why: 非VC調達（ブートストラップ）でのSaaS運営ノウハウが凝縮。
     url: https://www.youtube.com/channel/UCroeMSea_O-xfgDvgbJGVQA
 
+  - name: Rob Walling
+    channel_id: UCHoBKQDRkJcOY2BO47q5Ruw
+    enabled: true
+    category: indie-hacker
+    language: en
+    subscribers: 117000
+    recent_activity: 2
+    why: MicroConf 創設者。『The SaaS Playbook』著者。Bootstrap 起業の具体戦略。
+    url: https://www.youtube.com/channel/UCHoBKQDRkJcOY2BO47q5Ruw
+
   - name: Marc Lou
     channel_id: UC12JO2IPlEViR-o6SLXKx1A
     enabled: true
