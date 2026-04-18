@@ -1,22 +1,22 @@
 channels:
   - name: NetworkChuck
-    channel_id: UC9x0AN7BWHp02kErXq1xEGA
+    channel_id: UC9x0AN7BWHpCDHSm9NiJFJQ
     enabled: true
     category: tech
     language: en
-    subscribers: 3800000
+    subscribers: 5220000
     recent_activity: 4
-    why: IT infrastructure, cloud, and networking basics with high energy.
-    url: https://www.youtube.com/channel/UC9x0AN7BWHp02kErXq1xEGA
+    why: ITインフラ、Linux、Dockerなどバックエンド・ネットワーク系の実用解説が豊富。
+    url: https://www.youtube.com/channel/UC9x0AN7BWHpCDHSm9NiJFJQ
 
   - name: Web Dev Simplified
     channel_id: UCFbNIlppjAuEX4znoulh0Cw
     enabled: true
     category: tech
     language: en
-    subscribers: 1500000
+    subscribers: 1760000
     recent_activity: 8
-    why: Practical, high-quality web development tutorials.
+    why: React、JavaScriptのモダンな書き方や設計思想を短時間で解説。
     url: https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw
 
   - name: Y Combinator
@@ -24,151 +24,141 @@ channels:
     enabled: true
     category: startup
     language: en
-    subscribers: 1100000
+    subscribers: 2220000
     recent_activity: 10
-    why: Best practices, startup advice, and founder interviews from top accelerator.
+    why: スタートアップの0->1、ピボット、資金調達など世界最高峰の知見。
     url: https://www.youtube.com/channel/UCcefcZRL2oaA_uBNeo5UOWg
 
-  - name: Slidebean
-    channel_id: UC4Gj4h4-h-O21062KxNfU1Q
+  - name: This Week in Startups
+    channel_id: UCkkhmBWfS7pILYIk0izkc3A
     enabled: true
     category: startup
     language: en
-    subscribers: 450000
-    recent_activity: 3
-    why: Startup pitch decks, business models, and fundraising strategies.
-    url: https://www.youtube.com/channel/UC4Gj4h4-h-O21062KxNfU1Q
+    subscribers: 350000
+    recent_activity: 15
+    why: 最新のテックニュースと起業家インタビューの頻度が非常に高い。
+    url: https://www.youtube.com/channel/UCkkhmBWfS7pILYIk0izkc3A
 
   - name: Jack Herrington
-    channel_id: UC6vRUjYqDjcUsMhN7EziTrg
+    channel_id: UC6vRUjYqDuoUsYsku86Lrsw
     enabled: true
     category: dev-for-startup
     language: en
-    subscribers: 150000
+    subscribers: 211000
     recent_activity: 4
-    why: Modern frontend architectures and scalable stacks suitable for startups.
-    url: https://www.youtube.com/channel/UC6vRUjYqDjcUsMhN7EziTrg
+    why: スタートアップで採用されるモダンWeb技術（Next.js等）の深い実装解説。
+    url: https://www.youtube.com/channel/UC6vRUjYqDuoUsYsku86Lrsw
 
   - name: Hussein Nasser
     channel_id: UC_ML5xP23TOWKUcc-oAE_Eg
     enabled: true
     category: dev-for-startup
     language: en
-    subscribers: 250000
+    subscribers: 490000
     recent_activity: 6
-    why: Deep dives into backend engineering and database performance.
+    why: データベース、プロキシ、アーキテクチャの本質的な理解に最適。
     url: https://www.youtube.com/channel/UC_ML5xP23TOWKUcc-oAE_Eg
 
   - name: Ahrefs
-    channel_id: UCWquN4S-ZpQMEGqJSA_TkiA
+    channel_id: UCWquNQV8Y0_defMKnGKrFOQ
     enabled: true
     category: marketing
     language: en
-    subscribers: 430000
+    subscribers: 664000
     recent_activity: 4
-    why: Actionable SEO and marketing tutorials for growing traffic.
-    url: https://www.youtube.com/channel/UCWquN4S-ZpQMEGqJSA_TkiA
-
-  - name: Neil Patel
-    channel_id: UCl-ZO84QWJjU4Y1d6O9G3XQ
-    enabled: true
-    category: marketing
-    language: en
-    subscribers: 1200000
-    recent_activity: 12
-    why: High-volume, short marketing tips and digital growth strategies.
-    url: https://www.youtube.com/channel/UCl-ZO84QWJjU4Y1d6O9G3XQ
+    why: SEOの基礎から応用まで、データに基づいた網羅的なマーケティング解説。
+    url: https://www.youtube.com/channel/UCWquNQV8Y0_defMKnGKrFOQ
 
   - name: Mayuko
-    channel_id: UCmpewK3272hP13Q_TzI-d7A
+    channel_id: UCEDkO7wshcDZ7UZo17rPkzQ
     enabled: true
     category: career
     language: en
-    subscribers: 580000
+    subscribers: 537000
     recent_activity: 2
-    why: Honest perspectives on software engineering careers and tech life.
-    url: https://www.youtube.com/channel/UCmpewK3272hP13Q_TzI-d7A
+    why: 元シニアエンジニアの視点から、キャリア形成やメンタルヘルスを共有。
+    url: https://www.youtube.com/channel/UCEDkO7wshcDZ7UZo17rPkzQ
 
-  # TODO: channel_id 要確認。確認後 enabled: true に切り替え
-  - name: Namanh Kapur
-    channel_id: "要確認"
-    enabled: false
+  - name: Engineering with Utsav
+    channel_id: UC4HiUdMwzyZhBUoNKXenO-A
+    enabled: true
     category: career
     language: en
-    subscribers: 180000
-    recent_activity: 3
-    why: Tips for interviewing, landing tech jobs, and productivity.
-    url: https://www.youtube.com/
+    subscribers: 259000
+    recent_activity: 4
+    why: 元FAANGエンジニア視点でのシステム設計、キャリア構築、エンジニアの解像度を上げる解説。
+    url: https://www.youtube.com/channel/UC4HiUdMwzyZhBUoNKXenO-A
 
-  - name: Continuous Delivery
-    channel_id: UCCfqyGl3nq_V0bo6VcmP0YQ
+  # 旧名 "Continuous Delivery"。現在は "Modern Software Engineering" に改名
+  - name: Modern Software Engineering
+    channel_id: UCCfqyGl3nq_V0bo64CjZh8g
     enabled: true
     category: senior-engineer
     language: en
-    subscribers: 220000
+    subscribers: 260000
     recent_activity: 4
-    why: Expert-level CI/CD, architecture, and agile software development principles.
-    url: https://www.youtube.com/channel/UCCfqyGl3nq_V0bo6VcmP0YQ
+    why: ソフトウェア工学の原則、TDD、デプロイ戦略に関する世界的権威（Dave Farley）。
+    url: https://www.youtube.com/channel/UCCfqyGl3nq_V0bo64CjZh8g
 
   - name: ArjanCodes
-    channel_id: UCBcGC4wH14o1-u1FjC5K7wQ
+    channel_id: UCVhQ2NnY5Rskt6UjCUkJ_DA
     enabled: true
     category: senior-engineer
     language: en
-    subscribers: 360000
+    subscribers: 324000
     recent_activity: 4
-    why: High-level code design, refactoring, and software architecture.
-    url: https://www.youtube.com/channel/UCBcGC4wH14o1-u1FjC5K7wQ
+    why: コードのリファクタリング、デザインパターン、クリーンコードの実践。
+    url: https://www.youtube.com/channel/UCVhQ2NnY5Rskt6UjCUkJ_DA
 
   - name: Dave2D
     channel_id: UCVYamHliCI9rw1tHR1xbkfw
     enabled: true
     category: gadget
     language: en
-    subscribers: 3700000
+    subscribers: 3690000
     recent_activity: 5
-    why: Clean, straightforward reviews of tech hardware and laptops.
+    why: ラップトップや周辺機器を機能美と実用性の観点からレビュー。
     url: https://www.youtube.com/channel/UCVYamHliCI9rw1tHR1xbkfw
 
   - name: ShortCircuit
-    channel_id: UCcJgOennb0EQIAgA2eRUWmw
+    channel_id: UCdBK94H6oZT2Q7l0-b0xmMg
     enabled: true
     category: gadget
     language: en
-    subscribers: 2200000
-    recent_activity: 15
-    why: Fast-paced unboxings and first impressions of new tech devices.
-    url: https://www.youtube.com/channel/UCcJgOennb0EQIAgA2eRUWmw
+    subscribers: 2530000
+    recent_activity: 12
+    why: 多様なガジェットの開封と速報レビュー。トレンド把握に最適。
+    url: https://www.youtube.com/channel/UCdBK94H6oZT2Q7l0-b0xmMg
 
+  # 登録者数は少ないが、B2B SaaS 領域での一次情報源として保持
   - name: MicroConf
-    channel_id: UCOkRsq2K0rWqRk4hA35OXXA
+    channel_id: UCroeMSea_O-xfgDvgbJGVQA
     enabled: true
     category: indie-hacker
     language: en
-    subscribers: 65000
+    subscribers: 539
     recent_activity: 6
-    why: B2B SaaS strategies for bootstrapped founders.
-    url: https://www.youtube.com/channel/UCOkRsq2K0rWqRk4hA35OXXA
+    why: 非VC調達（ブートストラップ）でのSaaS運営ノウハウが凝縮。
+    url: https://www.youtube.com/channel/UCroeMSea_O-xfgDvgbJGVQA
 
-  # TODO: channel_id 要確認。確認後 enabled: true に切り替え
   - name: Marc Lou
-    channel_id: "要確認"
-    enabled: false
+    channel_id: UC12JO2IPlEViR-o6SLXKx1A
+    enabled: true
     category: indie-hacker
     language: en
-    subscribers: 80000
+    subscribers: 141000
     recent_activity: 4
-    why: Transparent building of micro-SaaS products as a solopreneur.
-    url: https://www.youtube.com/
+    why: 開発速度を重視したShip（リリース）文化と個人開発のリアルを公開。
+    url: https://www.youtube.com/channel/UC12JO2IPlEViR-o6SLXKx1A
 
   - name: Ali Abdaal
     channel_id: UCoOae5nYA7VqaXzerajD0lg
     enabled: true
     category: productivity
     language: en
-    subscribers: 5400000
-    recent_activity: 4
-    why: Frameworks for productivity, learning, and meaningful work.
+    subscribers: 6580000
+    recent_activity: 5
+    why: 生産性と幸福度を両立させる仕組み作り、読書術、時間管理。
     url: https://www.youtube.com/channel/UCoOae5nYA7VqaXzerajD0lg
 
   - name: Thomas Frank
@@ -176,28 +166,27 @@ channels:
     enabled: true
     category: productivity
     language: en
-    subscribers: 2900000
+    subscribers: 3010000
     recent_activity: 2
-    why: Advanced Notion tutorials and personal workflow optimization.
+    why: Notion等のツールを駆使した高度な自動化、タスク管理術。
     url: https://www.youtube.com/channel/UCG-KntY7aVnIGXYEBQvmBAQ
 
   - name: Lex Fridman
-    channel_id: UCSHZKgP0K-N1X_Qv0EwZExQ
+    channel_id: UCSHZKyawb77ixDdsGog4iWA
     enabled: true
     category: podcast
     language: en
-    subscribers: 3800000
-    recent_activity: 8
-    why: Long-form, deep interviews with top tech and AI leaders.
-    url: https://www.youtube.com/channel/UCSHZKgP0K-N1X_Qv0EwZExQ
+    subscribers: 4970000
+    recent_activity: 6
+    why: AI研究者や技術リーダーとの深層対談。技術の未来予測に。
+    url: https://www.youtube.com/channel/UCSHZKyawb77ixDdsGog4iWA
 
-  # TODO: channel_id 要確認。確認後 enabled: true に切り替え
   - name: Lenny's Podcast
-    channel_id: "要確認"
-    enabled: false
+    channel_id: UC6t1O76G0jYXOAoYCm153dA
+    enabled: true
     category: podcast
     language: en
-    subscribers: 200000
+    subscribers: 580000
     recent_activity: 8
-    why: Elite product management, growth, and startup leadership interviews.
-    url: https://www.youtube.com/
+    why: プロダクトグロース、組織設計、リーダーシップの世界的定番番組。
+    url: https://www.youtube.com/channel/UC6t1O76G0jYXOAoYCm153dA
