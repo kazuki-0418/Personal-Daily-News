@@ -31,3 +31,7 @@ jobs:
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          # Click-tracking (optional — if either is unset, daily_news.py
+          # silently falls back to the original URL in email links).
+          CLICK_SIGNING_SECRET: ${{ secrets.CLICK_SIGNING_SECRET }}
+          PUBLIC_BASE_URL: ${{ secrets.PUBLIC_BASE_URL }}

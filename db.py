@@ -33,8 +33,11 @@ def is_already_sent(content_id: str) -> bool:
         return row is not None
 
 
-def save_article(article: dict) -> None:
-    """articles テーブルに1件保存。content_id 衝突時は何もしない。
+def save_article(article: dict) -> str | None:
+    """articles テーブルに1件保存し、その行の id (uuid, str) を返す。
+
+    content_id が既存の場合も既存行の id を返す。DB 接続不可などで保存できなか
+    ったときは None。呼び出し側はメール内のクリック追跡 URL 生成に id を使う。
 
     Args:
         article: 以下のキーを持つ dict
@@ -47,16 +50,21 @@ def save_article(article: dict) -> None:
             - category: str | None  (optional; source_metrics_30d の GROUP BY に使う)
     """
     params = {**article, "category": article.get("category")}
+    # ON CONFLICT DO UPDATE で no-op update を掛けることで、衝突時も RETURNING
+    # が発火する。content_id = EXCLUDED.content_id は元値への no-op。
     with get_conn() as conn:
-        conn.execute(
+        row = conn.execute(
             """
             insert into articles
               (source_type, source_name, content_id, title, url, summary, category, sent_at)
             values
               (%(source_type)s, %(source_name)s, %(content_id)s,
                %(title)s, %(url)s, %(summary)s, %(category)s, now())
-            on conflict (content_id) do nothing
+            on conflict (content_id) do update
+              set content_id = excluded.content_id
+            returning id
             """,
             params,
-        )
+        ).fetchone()
         conn.commit()
+        return str(row[0]) if row else None

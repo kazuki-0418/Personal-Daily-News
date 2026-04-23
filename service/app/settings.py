@@ -1,3 +1,4 @@
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -6,3 +7,22 @@ class Settings(BaseSettings):
 
     app_env: str = "development"
     log_level: str = "INFO"
+
+    # HMAC secret used to sign /r/{article_id} URLs. No default: unset → startup fail.
+    click_signing_secret: str = Field(..., min_length=16)
+
+    # Postgres (Neon). Same DATABASE_URL the batch uses.
+    database_url: str = Field(...)
+
+    # Public-facing base URL the email links point at, e.g. https://newspaper.<domain>
+    public_base_url: str = Field(...)
+
+    # Salt for SHA-256(ip || salt). Rotate periodically to break long-term tracking.
+    ip_salt: str = Field(..., min_length=8)
+
+    # Redirect target when article_id does not exist in DB.
+    missing_redirect_url: str = "https://newspaper.invalid/missing"
+
+    # Rate limit for /r/{id}. Read from env at rate_limit.py import time;
+    # kept here too so /health can echo it if needed later.
+    click_rate_limit: str = "60/minute"
