@@ -1,12 +1,12 @@
 services:
-  api:
+  fastapi:
     image: ghcr.io/kazuki-0418/personal-daily-news:latest
-    container_name: personal-daily-news-api
+    container_name: personal-daily-news-fastapi
     restart: unless-stopped
     env_file:
-      - .env
-    ports:
-      - "8000:8000"
+      - ./secrets.env
+    networks:
+      - internal
     healthcheck:
       test:
         - CMD
@@ -17,3 +17,20 @@ services:
       timeout: 3s
       retries: 3
       start_period: 5s
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: personal-daily-news-cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    env_file:
+      - ./secrets.env
+    networks:
+      - internal
+    depends_on:
+      fastapi:
+        condition: service_healthy
+
+networks:
+  internal:
+    driver: bridge
