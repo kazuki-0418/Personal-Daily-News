@@ -3,13 +3,16 @@ Personal AI Newspaper — Phase 2 multi-source edition.
 Fetches YouTube uploads + RSS articles → summarizes with Claude → sends Gmail.
 """
 
+import base64
+import hashlib
+import hmac
 import html as html_lib
 import os
-import base64
 import random
 import sys
-from email.mime.text import MIMEText
 from datetime import datetime, timedelta, timezone
+from email.mime.text import MIMEText
+from urllib.parse import quote
 
 import yaml
 from googleapiclient.discovery import build
@@ -118,6 +121,36 @@ def summarize(client: Anthropic, title: str, content: str) -> str:
 
 
 # ============================================================
+# Click-tracking URL rewrite
+# ============================================================
+# HMAC signer kept IN SYNC with service/app/signing.py. The golden vector in
+# service/tests/test_signing.py is the contract — if you edit this, verify
+# it still produces the expected output there.
+_CLICK_SIG_LEN = 22
+
+
+def _sign_article(article_id: str, secret: str) -> str:
+    digest = hmac.new(secret.encode(), article_id.encode(), hashlib.sha256).digest()
+    return base64.urlsafe_b64encode(digest).decode()[:_CLICK_SIG_LEN]
+
+
+def _redirect_url(article_id: str | None, original_url: str) -> str:
+    """Return the tracking URL for an article, or the original URL if tracking
+    is not configured yet (missing env) or the article id is unavailable.
+
+    This is intentionally lenient: a new deploy may not have CLICK_SIGNING_SECRET
+    / PUBLIC_BASE_URL set. In that case, the email still works — just without
+    click tracking — rather than 404'ing every link.
+    """
+    secret = os.environ.get("CLICK_SIGNING_SECRET")
+    base = os.environ.get("PUBLIC_BASE_URL")
+    if not article_id or not secret or not base:
+        return original_url
+    sig = _sign_article(article_id, secret)
+    return f"{base.rstrip('/')}/r/{quote(article_id, safe='')}?s={quote(sig, safe='')}"
+
+
+# ============================================================
 # Build HTML email
 # ============================================================
 def build_email_html(sections: list[dict]) -> str:
@@ -131,12 +164,12 @@ def build_email_html(sections: list[dict]) -> str:
         html += f'<h2 style="border-bottom:2px solid #333;padding-bottom:4px;margin-top:32px;">{source_name}</h2>'
         for item in section["items"]:
             title = html_lib.escape(item["title"])
-            url = html_lib.escape(item["url"])
+            link_url = html_lib.escape(_redirect_url(item.get("article_id"), item["url"]))
             summary_html = html_lib.escape(item["summary"]).replace("\n", "<br>")
             html += f"""
 <div style="margin:16px 0;padding:12px 16px;background:#f7f7f7;border-radius:8px;">
   <h3 style="margin:0 0 8px 0;font-size:16px;">
-    <a href="{url}" style="color:#1a73e8;text-decoration:none;">{title}</a>
+    <a href="{link_url}" style="color:#1a73e8;text-decoration:none;">{title}</a>
   </h3>
   <div style="color:#444;line-height:1.6;font-size:14px;">{summary_html}</div>
 </div>
@@ -247,12 +280,9 @@ def main():
         summarized_count += 1
         print(f"  ✅ summarized ({summarized_count}/{MAX_VIDEOS_PER_RUN})")
 
-        processed_by_source.setdefault(item["source_name"], []).append(
-            {"title": item["title"], "summary": summary, "url": item["url"]}
-        )
-
-        # 送信失敗時に再送できるよう、保存は送信前に行う
-        save_article(
+        # 送信失敗時に再送できるよう、保存は送信前に行う。
+        # article_id はクリック追跡 URL (/r/{id}) の生成に使う。
+        article_id = save_article(
             {
                 "source_type": item["source_type"],
                 "source_name": item["source_name"],
@@ -261,6 +291,15 @@ def main():
                 "url": item["url"],
                 "summary": summary,
                 "category": item.get("category"),
+            }
+        )
+
+        processed_by_source.setdefault(item["source_name"], []).append(
+            {
+                "title": item["title"],
+                "summary": summary,
+                "url": item["url"],
+                "article_id": article_id,
             }
         )
 
